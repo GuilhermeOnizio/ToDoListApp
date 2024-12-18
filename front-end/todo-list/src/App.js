@@ -1,11 +1,14 @@
 // src/App.js
 import React from 'react';
 import TaskList from './components/TaskList';
+import './styles.css';
 
 function App() {
   return (
     <div className="App">
-      <TaskList />
+      <div className="container">
+        <TaskList />
+      </div>
     </div>
   );
 }

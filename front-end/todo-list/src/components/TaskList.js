@@ -26,29 +26,48 @@ const TaskList = () => {
 
   // Marcar tarefa como concluída
   const toggleCompletion = (id) => {
+    console.log("ID enviado para marcar como concluída:", id);  // Verifique o valor do id aqui
+  
+    if (id <= 0) {
+      console.error('ID inválido. O ID não pode ser 0 ou negativo.');
+      return;
+    }
+  
     axios.put(`http://localhost:8080/api/tarefas/${id}`)
       .then(() => {
         setTasks(tasks.map(task =>
           task.id === id ? { ...task, concluida: !task.concluida } : task
         ));
       })
-      .catch(error => console.error('Erro ao marcar tarefa como concluída', error));
+      .catch(error => {
+        console.error('Erro ao marcar tarefa como concluída', error);
+        alert('Erro ao marcar tarefa como concluída.');
+      });
   };
-
-  // Remover tarefa
+  
   const removeTask = (id) => {
+    console.log("ID enviado para remoção da tarefa:", id);  // Verifique o valor do id aqui
+  
+    if (id <= 0) {
+      console.error('ID inválido. O ID não pode ser 0 ou negativo.');
+      return;
+    }
+  
     axios.delete(`http://localhost:8080/api/tarefas/${id}`)
       .then(() => {
         setTasks(tasks.filter(task => task.id !== id));
       })
-      .catch(error => console.error('Erro ao remover tarefa', error));
+      .catch(error => {
+        console.error('Erro ao remover tarefa', error);
+        alert('Erro ao remover tarefa.');
+      });
   };
 
   return (
     <div>
       <h1>To-Do List</h1>
       <AddTask addTask={addTask} />
-      <div>
+      <div className='task-list'>
         {tasks.map((task) => (
           <Task key={task.id} task={task} toggleCompletion={toggleCompletion} removeTask={removeTask} />
         ))}

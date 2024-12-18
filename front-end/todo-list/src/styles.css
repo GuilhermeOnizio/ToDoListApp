@@ -1,0 +1,110 @@
+/* src/styles.css */
+
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000620;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container principal */
+  .container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #000f38;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cabeçalho */
+  h1 {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  /* Formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background: #0056b3;
+  }
+  
+  /* Lista de tarefas */
+  .task-list {
+    margin-top: 20px;
+  }
+  
+  .task-item {
+    padding: 15px;
+    border: 1px solid #000625;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #122152;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .task-item h3 {
+    margin: 0;
+    color: #007BFF;
+  }
+  
+  .task-item p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .task-item .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .task-item .actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .task-item .actions button.complete {
+    background: #28a745;
+    color: rgb(255, 255, 255);
+  }
+  
+  .task-item .actions button.complete:hover {
+    background: #218838;
+  }
+  
+  .task-item .actions button.remove {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .task-item .actions button.remove:hover {
+    background: #c82333;
+  }
+  
